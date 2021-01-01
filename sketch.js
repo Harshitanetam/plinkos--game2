@@ -12,7 +12,7 @@ var slingshot;
 var score=0;
 var bg;
 var backgroundimage;
-var color;
+var bgcolor;
 function preload(){
   polygon_img=loadImage("polygon.png");
   getBackgroundimg();
@@ -78,11 +78,12 @@ function setup(){
 }
 function draw(){
 
- if(color){
-    //background(color);
+  
+ if(bgcolor){
+    background(bgcolor);
   }
     rectMode(CENTER)
-    //background(56,44,44)
+   // background(56,44,44)
     textSize(20);
     fill("lightyellow");
     text("Darg the Hexagonal Stone and Release it,to launch it towards the box",100,30);
@@ -105,7 +106,6 @@ function draw(){
     box3.score();
     box6.display();
     box7.display();
-    score=score+2;
     fill("pink")
     box8.display();
     box9.display();
@@ -141,6 +141,7 @@ function draw(){
     box3.score();
     box6.score();
     box7.score();
+
   imageMode(CENTER);
   image(polygon_img ,ball.position.x,ball.position.y,40,40);
 
@@ -164,11 +165,11 @@ async function getBackgroundimg(){
     if(hour>6 &&hour<19){
     console.log("sunnyday");     
       bg="bg.png";
-      color="yellow";
+      bgcolor="green";
     }
     else{
       bg="bg2.jpg";
-      color="black";
+      bgcolor="black";
     }
     backgroundimage=loadImage(bg);
 }
